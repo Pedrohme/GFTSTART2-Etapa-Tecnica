@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 
 namespace GFTSTART2_Etapa_Tecnica.questao2 {
     public class Menu {
@@ -23,12 +22,20 @@ namespace GFTSTART2_Etapa_Tecnica.questao2 {
                             System.Console.WriteLine("Valor inválido!");
                             break;
                         }
-                        System.Console.WriteLine("Insira o ano atual: ");
-                        if (!int.TryParse(Console.ReadLine(), out int atual)) {
-                            System.Console.WriteLine("Valor inválido!");
-                            break;
+
+                        System.Console.WriteLine("Insira o ano atual (deixe vazio para usar o ano de hoje automaticamente): ");
+                        string input = Console.ReadLine();
+                        if (String.IsNullOrEmpty(input)) {
+                            System.Console.WriteLine($"A idade é: {Calculos.Idade(nascimento)}" + Environment.NewLine);
+
                         }
-                        System.Console.WriteLine($"A idade é: {Calculos.Idade(nascimento, atual)}" + Environment.NewLine);
+                        else {
+                            if (!int.TryParse(input, out int atual)) {
+                                System.Console.WriteLine("Valor inválido!");
+                                break;
+                            }
+                            System.Console.WriteLine($"A idade é: {Calculos.Idade(nascimento, atual)}" + Environment.NewLine);
+                        }
                         break;
 
                     case 2:
@@ -37,11 +44,13 @@ namespace GFTSTART2_Etapa_Tecnica.questao2 {
                             System.Console.WriteLine("Valor inválido!");
                             break;
                         }
+
                         System.Console.WriteLine("Insira o peso(massa) da pessoa em kilogramas: ");
                         if (!Double.TryParse(Console.ReadLine(), out double peso)) {
                             System.Console.WriteLine("Valor inválido!");
                             break;
                         }
+                        
                         System.Console.WriteLine($"O IMC da pessoa é: {Calculos.Imc(altura, peso)}" + Environment.NewLine);
                         break;
 
