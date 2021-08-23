@@ -7,7 +7,7 @@ namespace GFTSTART2_Etapa_Tecnica.questao3 {
                 new Morador("15941241323", 311, false),//casa impar, nao possui cachorro = entrega
                 new Morador("15945341675", 542, false),//casa par, nao possui cachorro = entrega
                 new Morador("15968482384", 697, true), //casa impar, possui cachorro = não entrega
-                new Morador("15955433424", 753, false) //casa impar, nao possui cachorro = não entrega
+                new Morador("15955433424", 753, false) //casa impar, nao possui cachorro = entrega
             };
             //total: 3 casas entregues, sendo 2 impares
 
