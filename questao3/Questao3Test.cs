@@ -13,7 +13,7 @@ namespace GFTSTART2_Etapa_Tecnica.questao3 {
             foreach (var morador in moradores) {
                 correio.Entregar(morador);
             }
-            
+
             System.Console.WriteLine();
             System.Console.WriteLine("Resultado esperado: entregou em 2 casa(s) de número ímpar");
             System.Console.WriteLine($"Resultado: entregou em {correio.EntreguesImpar} casa(s) de número ímpar");
